@@ -1,73 +1,99 @@
-# Laravel Project
+# Aplikasi Hotelku
 
-This is a Laravel-based web application project.
+Ini adalah proyek aplikasi web berbasis Laravel untuk manajemen dan pemesanan hotel.
 
-## Description
+## Deskripsi
 
-This project is built using the Laravel PHP framework, providing a robust foundation for developing modern web applications. It includes features such as:
+Aplikasi Hotelku dirancang untuk menyediakan platform komprehensif untuk manajemen hotel, termasuk pemesanan kamar, manajemen pelanggan, dan pengolahan pesanan. Aplikasi ini menggunakan kerangka PHP Laravel, menawarkan fondasi yang kokoh untuk mengembangkan aplikasi web modern. Fitur utama termasuk:
 
-- MVC architecture
-- Eloquent ORM for database interactions
-- Blade templating engine
-- Built-in authentication system
-- RESTful routing
-- Artisan command-line tool
+- Arsitektur MVC untuk organisasi kode yang efisien
+- Eloquent ORM untuk interaksi basis data yang mulus
+- Mesin templating Blade untuk rendering konten dinamis
+- Sistem autentikasi bawaan untuk akses pengguna yang aman
+- Routing RESTful untuk integrasi API
+- Alat baris perintah Artisan untuk manajemen proyek yang efisien
 
-## Setup Instructions
+## Instruksi Pengaturan
 
-Follow these steps to set up the project on your local machine:
+Untuk mengatur proyek Aplikasi Hotelku pada mesin lokal Anda, ikuti langkah-langkah berikut:
 
-1. Clone the repository:
+1. Kloning repositori:
    ```
-   git clone https://github.com/your-username/your-project-name.git
-   ```
-
-2. Navigate to the project directory:
-   ```
-   cd your-project-name
+   git clone https://github.com/uthadehikaru/hotelku.git
    ```
 
-3. Install PHP dependencies using Composer:
+2. Navigasi ke direktori proyek:
+   ```
+   cd hotelku
+   ```
+
+3. Instalasi dependensi PHP menggunakan Composer:
    ```
    composer install
    ```
 
-4. Copy the example environment file and create a new .env file:
+4. Salin file lingkungan contoh dan buat file .env baru:
    ```
    cp .env.example .env
    ```
 
-5. Generate an application key:
+5. Generasi kunci aplikasi:
    ```
    php artisan key:generate
    ```
 
-6. Configure your database in the .env file:
+6. Konfigurasi basis data Anda dalam file .env:
    ```
    DB_CONNECTION=mysql
    DB_HOST=127.0.0.1
    DB_PORT=3306
-   DB_DATABASE=your_database_name
-   DB_USERNAME=your_database_username
-   DB_PASSWORD=your_database_password
+   DB_DATABASE=hotelku_app
+   DB_USERNAME=root
+   DB_PASSWORD=your_strong_password
    ```
 
-7. Run database migrations:
+7. Jalankan migrasi basis data:
    ```
    php artisan migrate
    ```
 
-8. Start the development server:
+8. Mulai server pengembangan:
    ```
    php artisan serve
    ```
 
-9. Visit `http://localhost:8000` in your web browser to see the application.
+9. Kunjungi `http://localhost:8000` dalam browser web Anda untuk mengakses Aplikasi Hotelku.
 
-## Additional Configuration
+## Pengguna Demo
 
-For more detailed configuration and customization options, please refer to the [Laravel documentation](https://laravel.com/docs).
+Untuk tujuan demonstrasi, akun pengguna default tersedia:
 
-## License
+- Email: admin@laravel.test
+- Kata Sandi: secret
 
-This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Harap dicatat bahwa ini adalah akun demo dan tidak boleh digunakan untuk tujuan produksi.
+
+## Konfigurasi Email
+
+Hotelku memiliki fitur notifikasi email ketika ada pemesanan baru. Untuk mengirim email, konfigurasi email Anda di file .env:
+
+```
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=your_username
+MAIL_PASSWORD=your_password
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS="hello@example.com"
+MAIL_FROM_NAME="Hotelku"
+```
+
+- buat cron job untuk mengirim email setiap 1 menit:
+
+```
+* * * * * php /path/to/artisan queue:work --stop-when-empty >> /dev/null 2>&1
+```
+
+## Lisensi
+
+Proyek ini adalah perangkat lunak open-source yang dilisensikan di bawah [lisensi MIT](https://opensource.org/licenses/MIT).

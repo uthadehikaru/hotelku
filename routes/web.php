@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\OrderDetail;
 use App\Livewire\LoginForm;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,13 +17,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'welcome');
+Route::get('order/{order:booking_code}', OrderDetail::class)->name('order.detail');
 Route::get('login', LoginForm::class)->name('login');
 Route::get('logout', function () {
     Auth::logout();
 
     return redirect()->route('login');
 })->name('logout');
-
-Route::middleware('auth')->group(function () {
-    Route::view('dashboard', 'dashboard')->name('dashboard');
-});

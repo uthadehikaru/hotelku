@@ -36,6 +36,9 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
+                \App\Filament\Resources\OrderResource\Widgets\OrderStat::class,
+                \App\Filament\Resources\RoomResource\Widgets\RoomStat::class,
+                \App\Filament\Resources\OrderResource\Widgets\PendingOrder::class,
             ])
             ->middleware([
                 EncryptCookies::class,

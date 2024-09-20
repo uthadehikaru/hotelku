@@ -60,7 +60,7 @@
         "test": [
             "vendor\\bin\\pint",
             "vendor\\bin\\phpstan analyse",
-            "@php artisan test"
+            "@php artisan test --parallel"
         ]
     },
     "extra": {
