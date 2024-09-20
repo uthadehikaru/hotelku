@@ -4,14 +4,12 @@ Ini adalah proyek aplikasi web berbasis Laravel untuk manajemen dan pemesanan ho
 
 ## Deskripsi
 
-Aplikasi Hotelku dirancang untuk menyediakan platform komprehensif untuk manajemen hotel, termasuk pemesanan kamar, manajemen pelanggan, dan pengolahan pesanan. Aplikasi ini menggunakan kerangka PHP Laravel, menawarkan fondasi yang kokoh untuk mengembangkan aplikasi web modern. Fitur utama termasuk:
+Aplikasi Hotelku dirancang untuk menyediakan platform komprehensif untuk manajemen hotel, termasuk pemesanan kamar, dan pengolahan pesanan. Aplikasi ini menggunakan kerangka PHP Laravel, menawarkan fondasi yang kokoh untuk mengembangkan aplikasi web modern. Fitur utama termasuk:
 
-- Arsitektur MVC untuk organisasi kode yang efisien
-- Eloquent ORM untuk interaksi basis data yang mulus
-- Mesin templating Blade untuk rendering konten dinamis
-- Sistem autentikasi bawaan untuk akses pengguna yang aman
-- Routing RESTful untuk integrasi API
-- Alat baris perintah Artisan untuk manajemen proyek yang efisien
+- Fitur pemesanan kamar yang mudah digunakan
+- Pengolahan pesanan yang efisien
+- Notifikasi email otomatis
+- Integrasi dengan Google Maps
 
 ## Instruksi Pengaturan
 
